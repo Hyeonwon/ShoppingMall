@@ -1,63 +1,51 @@
-# 🛍️ React Shopping Mall Practice
+# 🛍️ React Shopping Mall
 
-간단한 쇼핑몰을 만들면서 React의 핵심 개념과 실무에서 자주 쓰이는 기술들을 연습하는 프로젝트입니다.
-
----
-
-## 🚀 Tech Stack
-
-- **Frontend**  
-  `React`, `React-Bootstrap`, `React Router`, `styled-components`
-
-- **State Management**  
-  `useState`, `Redux`, `localStorage`, `react-query`
-
-- **Backend**  
-  `Node.js`, `Express`
+React + React-Bootstrap을 활용하여 제작한 쇼핑몰 웹 애플리케이션입니다.  
+실제 서비스를 모델로 삼아 다양한 리액트 기능들을 연습하고 통합해보았습니다.
 
 ---
 
-## 🔧 Skills & Concepts
+## 📌 주요 기술 스택
 
-- **기초 문법**
-  - `import` / `export`
-  - 컴포넌트 구조, props, state, 데이터 바인딩
+- **Frontend:** React, React-Bootstrap, styled-components, React Router, Redux
+- **Backend:** Node.js, Express
+- **API/AJAX:** Fetch API, react-query
+- **State Management:** useState, Redux, custom hook
+- **Performance:** lazy loading, memo, useMemo, useTransition, useDeferredValue
+- **PWA:** Progressive Web App 구성
+- **기타:** localStorage 활용, 동기/비동기 처리 이해
 
-- **UI 구성**
-  - `Card` 컴포넌트
-  - `map()` 반복 렌더링
-  - `React-Bootstrap`으로 빠르게 스타일링
+---
 
-- **Routing**
-  - `react-router-dom`
-  - `navigate()` 함수
-  - `nested routes`, `URL parameter`
+## 🔍 학습 포인트
 
-- **스타일링**
-  - `styled-components`를 활용한 컴포넌트 단위 스타일
+- `import/export` 문법과 컴포넌트 분리
+- `useState`를 이용한 데이터 바인딩
+- `Card` 컴포넌트와 `map()` 반복문
+- `react-router-dom`의 `navigate`, `useParams`, nested route 구성
+- `styled-components`로 스타일 커스터마이징
+- `useEffect`를 활용한 Lifecycle 제어
+- `fetch`, `POST` 요청으로 백엔드 연동
+- `localStorage`로 장바구니/로그인 상태 저장
+- `redux`로 전역 상태 관리
+- `react-query`로 데이터 캐싱 및 비동기 처리
+- `lazy`, `memo`, `useMemo`로 성능 최적화
+- `useTransition`, `useDeferredValue`로 사용자 경험 개선
+- `custom hook`을 통한 코드 재사용
+- `Node.js + Express`로 API 서버 구성 및 연동
+- PWA 구성으로 모바일 대응 및 앱 설치 가능
 
-- **Lifecycle & Side Effect**
-  - `useEffect`
-  - 컴포넌트 마운트/언마운트 흐름 이해
+---
 
-- **비동기 처리 & 통신**
-  - `fetch`, `axios`, `POST` 요청
-  - `async / await` 패턴 이해
-  - `react-query`를 통한 서버 상태 관리
+## 💡 주요 기능
 
-- **상태 관리**
-  - `Redux`로 전역 상태 관리
-  - `localStorage`로 유저 정보 저장
-
-- **성능 최적화**
-  - `lazy import`, `React.memo`
-  - `useMemo`, `useTransition`, `useDeferredValue`
-
-- **Progressive Web App (PWA)**
-  - 오프라인 대응, 앱처럼 설치 가능하게 만들기
-
-- **Custom Hook**
-  - 재사용 가능한 훅 설계 및 분리
+- 상품 목록 및 상세 페이지 구현
+- URL 파라미터로 상품 개별 접근
+- 장바구니 및 주문 페이지 구현
+- 비동기 상품 로딩 및 페이징 처리
+- 사용자 경험을 고려한 전환 애니메이션
+- 모바일 대응 및 설치 가능한 웹 앱(PWA)
+- 서버와 연동된 상품 데이터 불러오기 및 저장
 
 ---
 
