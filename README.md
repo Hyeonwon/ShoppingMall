@@ -1,11 +1,11 @@
-# 🛍️ React Shopping Mall
+# React Shopping Mall
 
 React + React-Bootstrap을 활용하여 제작한 쇼핑몰 웹 애플리케이션입니다.  
 실제 서비스를 모델로 삼아 다양한 리액트 기능들을 연습하고 통합해보았습니다.
 
 ---
 
-## 📌 주요 기술 스택
+## 주요 기술 스택
 
 - **Frontend:** React, React-Bootstrap, styled-components, React Router, Redux
 - **Backend:** Node.js, Express
@@ -17,7 +17,7 @@ React + React-Bootstrap을 활용하여 제작한 쇼핑몰 웹 애플리케이�
 
 ---
 
-## 🔍 학습 포인트
+## 학습 포인트
 
 - `import/export` 문법과 컴포넌트 분리
 - `useState`를 이용한 데이터 바인딩
@@ -37,7 +37,7 @@ React + React-Bootstrap을 활용하여 제작한 쇼핑몰 웹 애플리케이�
 
 ---
 
-## 💡 주요 기능
+## 주요 기능
 
 - 상품 목록 및 상세 페이지 구현
 - URL 파라미터로 상품 개별 접근
@@ -49,7 +49,7 @@ React + React-Bootstrap을 활용하여 제작한 쇼핑몰 웹 애플리케이�
 
 ---
 
-## 🌐 백엔드 연동
+## 백엔드 연동
 
 - **Node + Express API 서버**
   - 프론트와 RESTful API 연동 테스트
@@ -57,8 +57,12 @@ React + React-Bootstrap을 활용하여 제작한 쇼핑몰 웹 애플리케이�
 
 ---
 
-## 🧪 목표
+## 목표
 
 - 다양한 React 기능을 직접 구현하며 학습
 - 실무에서 많이 사용하는 구조와 패턴 익히기
 - 백엔드와의 연동 경험까지 포함
+
+---
+
+> 궁금한 점이나 피드백은 언제든지 환영합니다! 😊
