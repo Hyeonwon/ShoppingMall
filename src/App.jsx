@@ -2,11 +2,15 @@ import { Nav, Navbar, Container } from 'react-bootstrap';
 import data from './data'
 import './App.css'
 import { useState } from 'react';
-
+import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom' 
+import ProductPage from './Page/ProductPage'
+import EventPage from './Page/EventPage';
+import AboutPage from './Page/AboutPage';
 
 function App() {
   
-  let [shoes, setShoes] = useState(data);
+  let [shoes] = useState(data);
+  let navigate = useNavigate();
 
   return (
     <div className='App'>
@@ -14,23 +18,30 @@ function App() {
         <Container>
           <Navbar.Brand href="#home">S&S</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Cart</Nav.Link>
+            <Nav.Link onClick={() => { navigate('./')}}>Home</Nav.Link>
+            <Nav.Link onClick={() => { navigate('./detail')}}>Product</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
-
-      <div className='main-bg'></div>
-
-      <div className='container'>
-        <div className='row'>
-          {shoes.map(function(a, i){
-            return(
-              <Items shoes={shoes} index={i}/>
-            )
-          })}          
-        </div>
-      </div>
+      
+      <Routes>
+        <Route path='/' element={
+          <>
+            <div className='main-bg'></div>
+            <div className='container'>
+              <div className='row'>
+                {shoes.map(function(a, i){
+                  return(
+                    <Items shoes={shoes} index={i}/>
+                  )
+                })}          
+              </div>
+            </div>
+          </>
+        }/>
+        <Route path='/detail/:id' element={<ProductPage shoes={shoes}/>}/>
+        
+      </Routes>
     </div>
   )
 }

@@ -14,3 +14,7 @@ div{
   /* 사진 맞추기 */
   background-position: center;
 }
+
+Link{
+  margin: auto;
+}
