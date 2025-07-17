@@ -47,9 +47,12 @@ function App() {
 }
 
 function Items(props){
+
+  let navigate = useNavigate(); 
+
   return(
     <div className='col-md-4'>
-      <img src = {props.shoes[props.index].img} width="80%"/>
+      <img src = {props.shoes[props.index].img} width="80%" onClick={ () => {navigate('./detail/'+ props.index )}}/>
       <h4>{props.shoes[props.index].title}</h4>
       <p>{props.shoes[props.index].price}</p>
     </div> 
