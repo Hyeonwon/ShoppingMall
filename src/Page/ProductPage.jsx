@@ -30,7 +30,7 @@ function ProductPage(props){
       }
       <div className="row">
         <div className="col-md-6">
-          <img src={foundProduct.img} width="100%" />
+          <img src = {"https://codingapple1.github.io/shop/shoes" + (foundProduct.id+1) + '.jpg'} width="100%" />
         </div>
         <div className="col-md-6">
           
