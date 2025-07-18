@@ -39,12 +39,11 @@ function App() {
     }
   }
 
-
   return (
     <div className='App'>
       <Navbar bg="light" data-bs-theme="light">
         <Container>
-          <Navbar.Brand href="#home">S&S</Navbar.Brand>
+          <Navbar.Brand href="#home">S&S</Navbar.Brand> 
           <Nav className="me-auto">
             <Nav.Link onClick={() => { navigate('./') }}>Home</Nav.Link>
             <Nav.Link onClick={() => { navigate('/detail') }}>Product</Nav.Link>
@@ -85,7 +84,7 @@ function Items(props) {
   let navigate = useNavigate();
 
   return (
-    <div className='col-md-4'>
+    <div className= 'col-md-4'>
       <img
         src={"https://codingapple1.github.io/shop/shoes" + (props.index + 1) + '.jpg'}
         width="80%"
