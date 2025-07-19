@@ -6,6 +6,7 @@ import { Routes, Route, useNavigate } from 'react-router-dom'
 import ProductPage from './Page/ProductPage'
 import axios from 'axios';
 import NotFound from './Page/NotFound';
+import Cart from './Page/Cart'
 
 function App() {
 
@@ -47,6 +48,7 @@ function App() {
           <Nav className="me-auto">
             <Nav.Link onClick={() => { navigate('./') }}>Home</Nav.Link>
             <Nav.Link onClick={() => { navigate('/detail') }}>Product</Nav.Link>
+            <Nav.Link onClick={() => { navigate('/cart') }}>Cart</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
@@ -75,6 +77,7 @@ function App() {
         } />
         <Route path='/detail/:id' element={<ProductPage shoes={shoes} />} />
         <Route path='*' element={<NotFound/>}/>
+        <Route path='/cart' element = {<Cart/>}/>
       </Routes>
     </div>
   )
