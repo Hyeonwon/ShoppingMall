@@ -30,6 +30,12 @@ function ProductPage(props){
       setFade2('')
     }
   }, [])
+
+  useEffect(() => {
+    let prevWatched = JSON.parse(localStorage.getItem('watched'))
+    let updateWatched = new Set([...prevWatched, foundProduct.id])
+    localStorage.setItem('watched', JSON.stringify([...updateWatched]))
+  }, [])
   
 
   return(

@@ -1,7 +1,7 @@
 import { Nav, Navbar, Container } from 'react-bootstrap';
 import data from './data'
 import './App.css'
-import { useState } from 'react';
+import { use, useEffect, useState } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom'
 import ProductPage from './Page/ProductPage'
 import axios from 'axios';
@@ -9,6 +9,14 @@ import NotFound from './Page/NotFound';
 import Cart from './Page/Cart'
 
 function App() {
+
+  useEffect(() => {
+    if(localStorage.getItem(JSON.stringify('watched').length) === 0){
+      localStorage.setItem('watched', JSON.stringify([]))
+    }
+  },[])
+
+  // localStorage.setItem('watched', JSON.stringify([]))
 
   let navigate = useNavigate();
   let [shoes, setShoes] = useState(data);
@@ -47,7 +55,6 @@ function App() {
           <Navbar.Brand href="#home">S&S</Navbar.Brand> 
           <Nav className="me-auto">
             <Nav.Link onClick={() => { navigate('./') }}>Home</Nav.Link>
-            <Nav.Link onClick={() => { navigate('/detail') }}>Product</Nav.Link>
             <Nav.Link onClick={() => { navigate('/cart') }}>Cart</Nav.Link>
           </Nav>
         </Container>
@@ -91,7 +98,8 @@ function Items(props) {
       <img
         src={"https://codingapple1.github.io/shop/shoes" + (props.index + 1) + '.jpg'}
         width="80%"
-        onClick={() => { navigate('/detail/' + props.index) }}
+        onClick={() => { navigate('/detail/' + props.index)
+        }}
         style={{ cursor: 'pointer' }}
       />
       <h4>{props.shoes[props.index].title}</h4>
