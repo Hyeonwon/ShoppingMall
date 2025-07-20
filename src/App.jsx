@@ -53,7 +53,7 @@ function App() {
         </Container>
       </Navbar>
 
-      <Routes>
+      <Routes>  
         <Route path='/' element={
           <>
             <div className='main-bg'></div>

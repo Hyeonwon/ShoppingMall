@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Nav } from "react-bootstrap"
 import '../App.css'
+import { increaseData } from "../store";
+import { useDispatch } from "react-redux";
 
 function ProductPage(props){
 
@@ -12,6 +14,7 @@ function ProductPage(props){
   let [alert, setAlert] = useState(true)
   let [tap, setTap] = useState(0)
   let [fade2, setFade2] = useState('')
+  let dispatch = useDispatch()
 
   useEffect(() => {
     let a = setTimeout(() => { setAlert(false) }, 2000)
@@ -48,7 +51,9 @@ function ProductPage(props){
           <p>{foundProduct.content}</p>
           <p>{foundProduct.price}</p>
 
-          <button className="btn btn-danger">주문하기</button> 
+          <button className="btn btn-danger" onClick={ () => {
+            dispatch(increaseData({id : foundProduct.id, name : foundProduct.title, count : 1}))
+          }}>주문하기</button> 
         </div>
       </div>
 

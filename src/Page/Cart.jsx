@@ -1,6 +1,6 @@
 import {Table} from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
-import { changeName, increaseAge} from '../store'
+import {increaseCount, decreaseCount, removeData} from '../store'
 
 function Cart(){
 
@@ -19,20 +19,33 @@ function Cart(){
                     <th>#</th>
                     <th>상품명</th>
                     <th>수량</th>
-                    <th>변경하기</th>
+                    <th></th>
+                    <th></th>
                     </tr>
                 </thead>
                 <tbody>
                 {
                     state.data.map((a, i) => (
                         <tr key = {i}>
-                            <td>{i+1}</td>
+                            <td>{i + 1}</td>
                             <td>{a.name}</td>
                             <td>{a.count}</td>
                             <td>
                                 <button onClick={() => {
-                                    dispatch(changeName())
+                                    dispatch(increaseCount({id : a.id, amount : 1}))
                                 }}>+</button>
+                                <button onClick={() => {
+                                    if (a.count > 1){
+                                        dispatch(decreaseCount({id : a.id, amount : 1}))
+                                    }
+                                }}>-</button>
+                            </td>
+                            <td>
+                                <button onClick={() => {
+                                    dispatch(removeData({id : a.id}))
+                                }}>
+                                    delete
+                                </button>
                             </td>
                         </tr>
                     ))

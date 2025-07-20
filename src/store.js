@@ -20,8 +20,35 @@ let data = createSlice({
   initialState : [
     {id : 0, name : 'White and Black', count : 2},
     {id : 2, name : 'Grey Yordan', count : 1}
-  ]
+  ],
+  reducers : {
+      increaseCount(state, action){
+        const target = state.find(item => item.id === action.payload.id)
+        if (target){
+          target.count += action.payload.amount
+        }
+      },
+      decreaseCount(state, action){
+        const target = state.find(item => item.id === action.payload.id)
+        if (target){
+          target.count -= action.payload.amount
+        }
+      },
+      increaseData(state, action){
+        const target = state.find(item => item.id === action.payload.id)
+        if(target){
+          target.count += action.payload.count
+        }else{
+          state.push (action.payload)
+        }
+      },
+      removeData(state, action){
+        return state.filter(item => item.id !== action.payload.id)
+      }
+  }
 })
+
+export let {increaseCount, increaseData, decreaseCount, removeData} = data.actions
 
 
 export default configureStore({
