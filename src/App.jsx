@@ -7,6 +7,7 @@ import ProductPage from './Page/ProductPage'
 import axios from 'axios';
 import NotFound from './Page/NotFound';
 import Cart from './Page/Cart'
+import { useQuery } from 'react-query';
 
 function App() {
 
@@ -23,6 +24,13 @@ function App() {
   let [clickCount, setClickCount] = useState(0);
   let [loading, setLoading] = useState(false);
   let [noMore, setNoMore] = useState(false);
+
+  let result = useQuery('작명', () => {
+    return axios.get('https://codingapple1.github.io/userdata.json')
+    .then((a) => {
+      return a.data
+    })
+  })
   
   const loadMore = () => {
     const urls = [
@@ -56,6 +64,11 @@ function App() {
           <Nav className="me-auto">
             <Nav.Link onClick={() => { navigate('./') }}>Home</Nav.Link>
             <Nav.Link onClick={() => { navigate('/cart') }}>Cart</Nav.Link>
+          </Nav>
+          <Nav className="ms-auto">
+            { result.isLoading && '로딩중' }
+            { result.error && '에러' }
+            { result.data && result.data.name }
           </Nav>
         </Container>
       </Navbar>
