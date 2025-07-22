@@ -4,8 +4,13 @@ import { Nav } from "react-bootstrap"
 import '../App.css'
 import { increaseData } from "../store";
 import { useDispatch } from "react-redux";
+import { useLike } from "../hooks/like";
+import { useUsername } from "../hooks/username";
 
 function ProductPage(props){
+
+  let [like,addLike] = useLike()
+  let username = useUsername()
 
   let {id} = useParams();
   let foundProduct = props.shoes.find(function(x){
@@ -53,10 +58,12 @@ function ProductPage(props){
         </div>
         <div className="col-md-6">
           
+          
+
           <h4 className="pt-5">{foundProduct.title}</h4>
           <p>{foundProduct.content}</p>
+          <p>{like} <span onClick={() => { addLike() }}>❤</span></p>
           <p>{foundProduct.price}</p>
-
           <button className="btn btn-danger" onClick={ () => {
             dispatch(increaseData({id : foundProduct.id, name : foundProduct.title, count : 1}))
           }}>주문하기</button> 
